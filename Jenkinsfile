@@ -65,4 +65,3 @@ pipeline {
         }
     }
 }
-rewrite with Dsonar 
