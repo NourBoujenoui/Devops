@@ -17,15 +17,15 @@ pipeline {
             }
         }
 
-        stage('Build') {
+        stage('Clean') {
             steps {
-                sh 'mvn clean compile'
+                sh 'mvn clean'
             }
         }
 
-        stage('Test') {
+        stage('Compile') {
             steps {
-                sh 'mvn test'
+                sh 'mvn compile'
             }
         }
 
@@ -58,10 +58,10 @@ pipeline {
 
     post {
         success {
-            echo 'Build, test, and analysis completed successfully!'
+            echo 'Build, analysis, and packaging completed successfully!'
         }
         failure {
-            echo 'Build or analysis failed.'
+            echo 'Pipeline failed.'
         }
     }
 }
